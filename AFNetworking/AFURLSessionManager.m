@@ -563,7 +563,8 @@ expectedTotalBytes:(int64_t)expectedTotalBytes {
 
 #pragma mark -
 
-- (void)setTaskWillPerformHTTPRedirectionBlock:(NSURLRequest * (^)(NSURLSession *session, NSURLSessionTask *task, NSURLResponse *response, NSURLRequest *request))block {
+- (void)setTaskWillPerformHTTPRedirectionBlock:(NSURLRequest * (^)(NSURLSession *session, NSURLSessionTask *task, NSURLResponse *response, NSURLRequest *request))block
+{
     self.taskWillPerformHTTPRedirection = block;
 }
 

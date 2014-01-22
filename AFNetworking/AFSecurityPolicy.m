@@ -178,7 +178,7 @@ static BOOL AFCertificateHostMatchesDomain(NSString *certificateHost, NSString *
 @implementation AFSecurityPolicy
 
 + (NSArray *)defaultPinnedCertificates {
-    static NSArray *_defaultPinnedCertificates = nil;
+    static NSArray *defaultPinnedCertificates = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSBundle *bundle = [NSBundle bundleForClass:[self class]];
@@ -190,10 +190,10 @@ static BOOL AFCertificateHostMatchesDomain(NSString *certificateHost, NSString *
             [certificates addObject:certificateData];
         }
         
-        _defaultPinnedCertificates = [[NSArray alloc] initWithArray:certificates];
+        defaultPinnedCertificates = [[NSArray alloc] initWithArray:certificates];
     });
     
-    return _defaultPinnedCertificates;
+    return defaultPinnedCertificates;
 }
 
 + (instancetype)defaultPolicy {
